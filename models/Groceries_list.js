@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
 class Meal extends Model {}
 
-Meal.init(
+Groceries_list.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,7 +11,7 @@ Meal.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    meal_name: {
+    name: {
       type: DataTypes.STRING,
       
     },
@@ -22,7 +22,7 @@ Meal.init(
         key: 'id',
       },
     
-    ingredients_id: {
+  ingredients_id: {
         type: DataTypes.INTEGER,
         references: {
           model: 'ingredients',

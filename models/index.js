@@ -1,5 +1,5 @@
 const User = require('./User');
-const Meal = require('./Meal');
+const Meal = require('./Groceries_list');
 const Ingredients = require('./Ingredients');
 
 
