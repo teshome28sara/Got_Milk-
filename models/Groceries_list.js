@@ -1,7 +1,7 @@
 
 const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
-class Meal extends Model {}
+class Groceries_list extends Model {}
 
 Groceries_list.init(
   {
@@ -38,9 +38,9 @@ Groceries_list.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'meal'
+    modelName: 'Groceries_list'
   
   }
 );
 
-module.exports = Meal;
+module.exports = Groceries_list;
