@@ -11,7 +11,7 @@ Meal.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    meal_name: {
       type: DataTypes.STRING,
       
     },

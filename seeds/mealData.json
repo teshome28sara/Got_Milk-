@@ -1,0 +1,27 @@
+[
+    {
+      "meal_name": "cheese bread",
+      "user_id": 1,
+      "ingredients_id": 1
+    },
+    {
+      "meal_name": "pancakes",
+      "user_id": 2,
+      "ingredients_id": 2
+    },
+    {
+      "meal_name": "past",
+      "user_id": 3,
+      "ingredients_id": 3
+    },
+    {
+      "comment_text": "chicken",
+      "user_id": 4,
+      "ingredients_id": 4
+    },
+    {
+      "meal_name": "steak",
+      "user_id": 5,
+      "ingredients_id": 5
+    }
+  ]

@@ -1,0 +1,27 @@
+[
+    {
+      "name":[ "butter", "cheese", "bread"],
+      
+      "user_id": 1
+    },
+    {
+      "name": ["sugar", "flour", "eggs", "milk", "butter"],
+     
+      "user_id": 2
+    },
+    {
+      "name": ["tomatoes","noodles", "salt", "oil"],
+     
+      "user_id": 3
+    },
+    {
+        "name": ["carrots","chicken", "broccoli", "broth"],
+       
+        "user_id": 4
+      },
+      {
+        "name": ["beef","pepper", "potatoes", "lemon"],
+       
+        "user_id": 5
+      }
+  ]
