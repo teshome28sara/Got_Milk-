@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="7X9QGUSQYKXfJocyHc30" name="model-layout">
-        <mxGraphModel dx="930" dy="486" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="710" dy="289" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -98,18 +98,21 @@
         </mxGraphModel>
     </diagram>
     <diagram id="HM3RdTvdxTYN8W3_6wnX" name="Homepage">
-        <mxGraphModel dx="930" dy="486" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="710" dy="289" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="L2vtDUeSiLblkOOY93SF-0"/>
                 <mxCell id="L2vtDUeSiLblkOOY93SF-1" parent="L2vtDUeSiLblkOOY93SF-0"/>
                 <mxCell id="1tvI8xykdtgbU2svZPjQ-0" value="Login" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;fontSize=10;" vertex="1" parent="L2vtDUeSiLblkOOY93SF-1">
-                    <mxGeometry x="300" y="170" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="365" y="170" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="G-h9jmCdPoGT5uxLRyBF-0" value="GOT MILK" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="L2vtDUeSiLblkOOY93SF-1">
+                    <mxGeometry x="50" y="40" width="750" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
     <diagram id="93wIpNlM_kLyfDTldpTy" name="Dashboard">
-        <mxGraphModel dx="1094" dy="572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="835" dy="340" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="x8qgtWbXHr_KdMX_9u_z-0"/>
                 <mxCell id="x8qgtWbXHr_KdMX_9u_z-1" parent="x8qgtWbXHr_KdMX_9u_z-0"/>
@@ -219,7 +222,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="xKVvV9xwbLFMXwMpkOD2" name="Saved Grocery List">
-        <mxGraphModel dx="930" dy="486" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="710" dy="289" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="6A16-AS9okwDNz8Wf3oD-0"/>
                 <mxCell id="6A16-AS9okwDNz8Wf3oD-1" parent="6A16-AS9okwDNz8Wf3oD-0"/>
@@ -240,6 +243,9 @@
                 </mxCell>
                 <mxCell id="wVpH6XK8PWdEFTD8iFlj-5" value="Saved Lists" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;fontSize=10;" vertex="1" parent="6A16-AS9okwDNz8Wf3oD-1">
                     <mxGeometry x="80" y="320" width="260" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="D_qROI2th5Wmpxkm2hSF-0" value="GOT MILK" style="rounded=0;whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="6A16-AS9okwDNz8Wf3oD-1">
+                    <mxGeometry x="50" y="40" width="750" height="60" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
