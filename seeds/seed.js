@@ -1,9 +1,9 @@
 const sequelize = require('../config/connection');
-const { User, Ingredients, Meal } = require('../models');
+const { User, Ingredients, Groceries_list  } = require('../models');
 
 const userData = require('./userData.json');
 const ingredientsData = require('./ingredientsData.json');
-const mealData = require('./mealData.json');
+const groceriesData = require('./groceriesData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -18,7 +18,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  const meal = await Meal.bulkCreate(mealData, {
+  const groceries = await Groceries_list.bulkCreate(groceriesData, {
     individualHooks: true,
     returning: true,
   });

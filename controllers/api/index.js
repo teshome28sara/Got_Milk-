@@ -1,11 +1,10 @@
-// Gather up all the different api routes 
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
 const ingredientRoutes = require('./ingredientRoutes');
-const groceriesRoute= require('./groceriesRoutes');
+const groceriesRoutes= require('./groceriesRoutes');
 
 router.use('/users', userRoutes);
 router.use('/ingredients', ingredientRoutes);
-router.use('/groceries', groceriesRoute);
+router.use('/groceries', groceriesRoutes);
 
 module.exports = router;
