@@ -13,7 +13,7 @@
 const sequelize = require('../config/connection');
 const { Ingredients, User } = require('../models');
 const router = require('express').Router();
-
+const withAuth = require('../utils/auth');
 router.get('/', (req, res) => {
   Ingredients.findAll({
     attributes: ['id', 'name',  'created_at'],
