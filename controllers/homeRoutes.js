@@ -10,76 +10,40 @@
 
 // routes.get("/ingrdients/add")
 
+const sequelize = require('../config/connection');
+const { Ingredients, User, Groceries_list } = require('../models');
 const router = require('express').Router();
-const { Groceries_list, Ingredients } = require('../models');
-// Import the custom middleware
-const withAuth = require('../utils/auth');
 
-// GET all groceries list  for homepage
-router.get('/', async (req, res) => {
-  try {
-    const dbGroceriesData = await Groceries_list.findAll({
-      include: [
-        {
-          model: Ingredients,
-          attributes: ['id', 'name' , 'user_id'],
+router.get('/', (req, res) => {
+  Ingredients.findAll({
+    attributes: ['id', 'name',  'created_at'],
+    include: [
+      {
+        model: Groceries_list,
+        attributes: ['id', 'namet', 'ingredients_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username'],
         },
-      ],
+      },
+      {
+        model: User,
+        attributes: ['username'],
+      },
+    ],
+  })
+    .then((dbIngredientsData) => {
+      const ingredient= dbIngredientsData.map((ingredients) => post.get({ plain: true }));
+      res.render('homepage', {
+        ingredient,
+        logged_in: req.session.logged_in,
+        username: req.session.username,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
-
-    const grocery = dbGroceriesData.map((groceries) =>
-      groceries.get({ plain: true })
-    );
-
-    res.render('homepage', {
-      grocery,
-      loggedIn: req.session.loggedIn,
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-// GET one grocery list
-// Use the custom middleware before allowing the user to access the gallery
-router.get('/groceries/:id', withAuth, async (req, res) => {
-  try {
-    const dbGroceriesData = await Groceries_list.findByPk(req.params.id, {
-      include: [
-        {
-          model: Ingredients,
-          attributes: [
-            'id',
-            'name',
-            'user_idt',
-           
-          ],
-        },
-      ],
-    });
-
-    const groceries = dbGroceriesData.get({ plain: true });
-    res.render('groceries', { groceries, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-// GET one ingredient
-// Use the custom middleware before allowing the user to access the painting
-router.get('/ingredients/:id', withAuth, async (req, res) => {
-  try {
-    const dbIngredientsData = await Ingredients.findByPk(req.params.id);
-
-    const ingredients = dbIngredientsData.get({ plain: true });
-
-    res.render('ingredients', { ingredients, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
 });
 
 router.get('/login', (req, res) => {
@@ -87,8 +51,89 @@ router.get('/login', (req, res) => {
     res.redirect('/');
     return;
   }
-
   res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+  res.render('signup');
+});
+
+router.get('/ingredients/:id', (req, res) => {
+  Ingredients.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ['id', 'name',  'created_at'],
+    include: [
+      {
+        model: Groceries_list,
+        attributes: ['id', 'name', 'ingredients_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username'],
+        },
+      },
+      {
+        model: User,
+        attributes: ['username'],
+      },
+    ],
+  })
+    .then((dbIngredientsData) => {
+      if (!dbIngredientsData) {
+        res.status(404).json({ message: 'No ingredients found with this id' });
+        return;
+      }
+      const ingredients = dbIngredientsData.get({ plain: true });
+      res.render('single-ingredients', {
+        ingredients,
+        logged_in: req.session.logged_in,
+        username: req.session.username,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+router.get('/ingredients-groceries_list', (req, res) => {
+  Ingredients.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ['id',  'name', 'created_at'],
+    include: [
+      {
+        model: Groceries_list,
+        attributes: ['id', 'name', 'ingredients_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username'],
+        },
+      },
+      {
+        model: User,
+        attributes: ['username'],
+      },
+    ],
+  })
+    .then((dbIngredientsData) => {
+      if (!dbIngredientsData) {
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      const ingredients = dbIngredientsData.get({ plain: true });
+
+      res.render('ingredients-groceries_list', {
+        ingredients,
+        logged_in: req.session.logged_in,
+        username: req.session.username,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
