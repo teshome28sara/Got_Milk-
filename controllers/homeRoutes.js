@@ -11,21 +11,21 @@
 // routes.get("/ingrdients/add")
 
 const sequelize = require('../config/connection');
-const { Ingredients, User, Groceries_list } = require('../models');
+const { Ingredients, User } = require('../models');
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
   Ingredients.findAll({
     attributes: ['id', 'name',  'created_at'],
     include: [
-      {
-        model: Groceries_list,
-        attributes: ['id', 'namet', 'ingredients_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username'],
-        },
-      },
+      // {
+      //   model: Groceries_list,
+      //   attributes: ['id', 'name', 'ingredients_id', 'user_id', 'created_at'],
+      //   include: {
+      //     model: User,
+      //     attributes: ['username'],
+      //   },
+      // },
       {
         model: User,
         attributes: ['username'],
@@ -103,14 +103,14 @@ router.get('/ingredients-groceries_list', (req, res) => {
     },
     attributes: ['id',  'name', 'created_at'],
     include: [
-      {
-        model: Groceries_list,
-        attributes: ['id', 'name', 'ingredients_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username'],
-        },
-      },
+      // {
+      //   model: Groceries_list,
+      //   attributes: ['id', 'name', 'ingredients_id', 'user_id', 'created_at'],
+      //   include: {
+      //     model: User,
+      //     attributes: ['username'],
+      //   },
+      // },
       {
         model: User,
         attributes: ['username'],
@@ -119,7 +119,7 @@ router.get('/ingredients-groceries_list', (req, res) => {
   })
     .then((dbIngredientsData) => {
       if (!dbIngredientsData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No ingredients found with this id' });
         return;
       }
       const ingredients = dbIngredientsData.get({ plain: true });

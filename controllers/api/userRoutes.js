@@ -1,57 +1,60 @@
 const router = require('express').Router();
-const { User, Ingredients, Groceries_list } = require('../../models');
+const { User } = require('../../models');
 
-router.get('/', async (req, res) => {
-  try {
-    const userData = await User.findAll({
-      attributes: { exclude: ['password'] },
-    });
-    res.status(200).json(userData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+// router.get('/', async (req, res) => {
+//   try {
+//     const userData = await User.findAll({
+//       attributes: { exclude: ['password'] },
+//     });
+//     res.status(200).json(userData);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
+
+
 
 // Return all ingredients created by  this userid
-router.get('/:id', async (req, res) => {
-  try {
-    const userData = await User.findOne({
-      attributes: { exclude: ['password'] },
-      where: { id: req.params.id },
-      include: [
-        {
-          model: Ingredients,
-          attributes: ['id', 'name',  'created_at'],
-        },
-        {
-          model: Groceries_list,
-          attributes: ['id', 'name', 'created_at'],
-          include: {
-            model: Ingredients,
-            attributes: ['name'],
-          },
-        },
-        {
-          model: Ingredients,
-          attributes: ['name'],
-        },
-      ],
-    });
-    console.log(userData);
-    if (!userData) {
-      res.status(404).json({ message: `No such user id ${req.params.id}` });
-      return;
-    }
-    res.status(200).json(userData);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+// router.get('/:id', async (req, res) => {
+//   try {
+//     const userData = await User.findOne({
+//       attributes: { exclude: ['password'] },
+//       where: { id: req.params.id },
+//       include: [
+//         {
+//           model: Ingredients,
+//           attributes: ['id', 'name',  'created_at'],
+//         },
+//         // {
+//         //   model: Groceries_list,
+//         //   attributes: ['id', 'name', 'created_at'],
+//         //   include: {
+//         //     model: Ingredients,
+//         //     attributes: ['name'],
+//         //   },
+//         // },
+//         {
+//           model: Ingredients,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
+//     console.log(userData);
+//     if (!userData) {
+//       res.status(404).json({ message: `No such user id ${req.params.id}` });
+//       return;
+//     }
+//     res.status(200).json(userData);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
+// Create new user
 
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
-    console.table(req.body);
+    console.log(req.body);
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.username = userData.username;
