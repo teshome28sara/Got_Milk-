@@ -1,2 +1,35 @@
-[]
+[
+    {
+        "name": "Sweet Potato",
+        "is_purchased": true
+    },
+    {
+        "name": "Olive Oil",
+        "is_purchased": false
+    },
+    {
+        "name": "Garlic Powder",
+        "is_purchased": false
+    },
+    {
+        "name": "Salt",
+        "is_purchased": false
+    },
+    {
+        "name": "Balsamic Vinegar",
+        "is_purchased": true
+    },
+    {
+        "name": "Honey",
+        "is_purchased": true
+    },
+    {
+        "name": "Dijon Mustard",
+        "is_purchased": false
+    },
+    {
+        "name": "Boneless Skinless Chicken Thighs",
+        "is_purchased": false
+    }
+]
   
