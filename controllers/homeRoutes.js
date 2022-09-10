@@ -119,7 +119,7 @@ router.get('/ingredients-groceries_list', (req, res) => {
   })
     .then((dbIngredientsData) => {
       if (!dbIngredientsData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: 'No ingredients found with this id' });
         return;
       }
       const ingredients = dbIngredientsData.get({ plain: true });
