@@ -9,10 +9,7 @@
 </head>
 
 <body>
-  <header class="display-flex justify-space-between align-center p-2">
-    <h1>
-      User Registry
-    </h1>
+  <header>
     <!-- Only display the logout button if the user is logged in -->
     {{#if logged_in}}
     <nav>
@@ -20,7 +17,7 @@
     </nav>
     {{/if}}
   </header>
-  <main class="container container-fluid mt-5">
+  <main class="container">
     {{{ body }}}
   </main>
   <footer>
