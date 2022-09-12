@@ -20,6 +20,13 @@ const seedDatabase = async () => {
 
  
 
+  for (const ingredients of ingredientsData) {
+    await Ingredients.create({
+      ...ingredients,
+      user_id: user[Math.floor(Math.random() * user.length)].id,
+    });
+  }
+
   process.exit(0);
 };
 

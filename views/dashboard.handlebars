@@ -1,0 +1,98 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{username}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Ingredient:</h3>
+
+    <form class="form new-ingredient-form">
+      <div class="form-group">
+        <label for="ingredient-name">Ingredient name:</label>
+        <input class="form-input" type="text" id="ingredient-name" name="ingredient-name" />
+      </div>
+      
+      <div class="form-group">
+        <label for="ingredient-purchased">is purchased:</label>
+        <textarea class="form-input" id="ingredient-purchased" name="ingredient-purchased"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if ingredient.length}}
+  <div class="col-md-6 ingredient-list">
+    <h3>Current Ingredients:</h3>
+
+    {{#each ingredient as |ingredients|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/ingredients/{{ingredients.id}}">{{ingredients.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{ingredients.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/dashboard.js"></script>
+
+
+
+
+
+
+
+{{!-- <div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{username}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New ingredient:</h3>
+
+    <form class="form new-ingredient-form">
+      <div class="form-group">
+        <label for="ingredient-name">ingredient name:</label>
+        <input class="form-input" type="text" id="ingredient-name" name="ingredient-name" />
+      </div>
+      <div class="form-group">
+        <label for="ingredient-purchase">is purchased</label>
+        <input class="form-input" type="text" id="ingredient-purchase" name="ingredient-purchase" />
+      </div>
+     
+      {{!-- <div class="form-group"> --}}
+        {{!-- <button type="submit" class="btn btn-primary">Create</button> --}}
+      {{!-- </div> --}}
+    </form>
+     <button type="submit" class="btn btn-primary">Create</button>
+  </div>
+
+  {{#if ingredient.length}}
+  <div class="col-md-6 ingredient-list">
+    <h3>Current Ingredients:</h3>
+
+    {{#each ingredient as |ingredients|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/ingredients/{{ingredients.id}}">{{ingredients.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{ingredients.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/dashboard.js"></script> --}}

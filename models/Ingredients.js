@@ -15,6 +15,10 @@ Ingredients.init(
       type: DataTypes.STRING,
       
     },
+    is_purchased: {
+      type: DataTypes. BOOLEAN,
+      
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
