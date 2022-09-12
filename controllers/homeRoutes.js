@@ -1,175 +1,82 @@
-// client side views
-// interacts with handelbar and prints content to user 
-
-// routes.get("/")
-// for homepage
-
-// routes.get("/login")
-
-// routes.get("/saved items")
-
-// routes.get("/ingrdients/add")
-
-const sequelize = require('../config/connection');
-const { Ingredients, User } = require('../models');
 const router = require('express').Router();
+const { Ingredients, User } = require('../models');
 const withAuth = require('../utils/auth');
-<<<<<<< HEAD
-=======
 
+router.get('/', async (req, res) => {
+  try {
+    // Get all ingredients and JOIN with user data
+    const ingredientsData = await Ingredients.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
 
->>>>>>> 823ead35ac8935fc3df40efac26b97307d9fd889
-router.get('/', withAuth, async (req, res) => {
-    try {
-      const userData = await User.findAll({
-        attributes: { exclude: ['password'] },
-        order: [['name', 'ASC']],
-      });
-  
-      const users = userData.map((project) => project.get({ plain: true }));
-  
+    // Serialize data so the template can read it
+    const ingredient = ingredientsData.map((ingredients) => ingredients.get({ plain: true }));
 
-      res.render('homepage', {
-        users,
-        logged_in: req.session.logged_in,
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-  
-  router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-      res.redirect('/');
-      return;
-    }
-  
-    res.render('login');
-  });
-  
-  module.exports = router;
+    // Pass serialized data and session flag into template
+    res.render('homepage', { 
+      ingredient, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-// router.get('/', (req, res) => {
-//   Ingredients.findAll({
-//     attributes: ['id', 'name',  'created_at'],
-//     // include: [
-//       // {
-//       //   model: Groceries_list,
-//       //   attributes: ['id', 'name', 'ingredients_id', 'user_id', 'created_at'],
-//       //   include: {
-//       //     model: User,
-//       //     attributes: ['username'],
-//       //   },
-//       // },
-//     //   {
-// //         model: User,
-// //         attributes: ['username'],
-// //       },
-// //     ],
-// //   })
-// //     .then((dbIngredientsData) => {
-// //       const ingredient= dbIngredientsData.map((ingredients) => post.get({ plain: true }));
-// //       res.render('dashboard', {
-// //         ingredient,
-// //         logged_in: req.session.logged_in,
-// //         username: req.session.username,
-// //       });
-// //     })
-// //     .catch((err) => {
-// //       console.log(err);
-// //       res.status(500).json(err);
-// //     });
-// // });
+router.get('/ingredients/:id', async (req, res) => {
+  try {
+    const ingredientsData = await Ingredients.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
 
+    const ingredients = ingredientsData.get({ plain: true });
 
-// router.get('/login', (req, res) => {
-//   if (req.session.loggedIn) {
-//     res.redirect('/');
-//     return;
-//   }
-//   res.render('login');
-// });
+    res.render('ingredients', {
+      ...ingredients,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-// router.get('/signup', (req, res) => {
-//   res.render('signup');
-// });
+// Use withAuth middleware to prevent access to route
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Ingredients }],
+    });
 
-// router.get('/ingredients/:id', (req, res) => {
-//   Ingredients.findOne({
-//     where: {
-//       id: req.params.id,
-//     },
-//     attributes: ['id', 'name',  'created_at'],
-//     include: [
-//       {
-//         model: Groceries_list,
-//         attributes: ['id', 'name', 'ingredients_id', 'user_id', 'created_at'],
-//         include: {
-//           model: User,
-//           attributes: ['username'],
-//         },
-//       },
-//       {
-//         model: User,
-//         attributes: ['username'],
-//       },
-//     ],
-//   })
-// //     .then((dbIngredientsData) => {
-// //       if (!dbIngredientsData) {
-// //         res.status(404).json({ message: 'No ingredients found with this id' });
-// //         return;
-// //       }
-// //       const ingredients = dbIngredientsData.get({ plain: true });
-// //       res.render('single-ingredients', {
-// //         ingredients,
-// //         logged_in: req.session.logged_in,
-// //         username: req.session.username,
-// //       });
-// //     })
-// //     .catch((err) => {
-// //       console.log(err);
-// //       res.status(500).json(err);
-// //     });
-// // });
-// // router.get('/ingredients-groceries_list', (req, res) => {
-// //   Ingredients.findOne({
-// //     where: {
-// //       id: req.params.id,
-// //     },
-// //     attributes: ['id',  'name', 'created_at'],
-// //     include: [
-// //       // {
-// //       //   model: Groceries_list,
-// //       //   attributes: ['id', 'name', 'ingredients_id', 'user_id', 'created_at'],
-// //       //   include: {
-// //       //     model: User,
-// //       //     attributes: ['username'],
-// //       //   },
-// //       // },
-// //       {
-// //         model: User,
-// //         attributes: ['username'],
-// //       },
-// //     ],
-// //   })
-// //     .then((dbIngredientsData) => {
-// //       if (!dbIngredientsData) {
-// //         res.status(404).json({ message: 'No ingredients found with this id' });
-// //         return;
-// //       }
-// //       const ingredients = dbIngredientsData.get({ plain: true });
+    const user = userData.get({ plain: true });
 
-// //       res.render('ingredients-groceries_list', {
-// //         ingredients,
-// //         logged_in: req.session.logged_in,
-// //         username: req.session.username,
-// //       });
-// //     })
-// //     .catch((err) => {
-// //       console.log(err);
-// //       res.status(500).json(err);
-// //     });
-// // });
+    res.render('dashboard', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-// module.exports = router;
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/dashboard');
+    return;
+  }
+
+  res.render('login');
+});
+
+module.exports = router;
