@@ -14,6 +14,11 @@ const sequelize = require('../config/connection');
 const { Ingredients, User } = require('../models');
 const router = require('express').Router();
 const withAuth = require('../utils/auth');
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 823ead35ac8935fc3df40efac26b97307d9fd889
 router.get('/', withAuth, async (req, res) => {
     try {
       const userData = await User.findAll({
@@ -23,6 +28,7 @@ router.get('/', withAuth, async (req, res) => {
   
       const users = userData.map((project) => project.get({ plain: true }));
   
+
       res.render('homepage', {
         users,
         logged_in: req.session.logged_in,
