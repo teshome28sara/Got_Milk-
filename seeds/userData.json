@@ -1,27 +1,17 @@
 [
-    {
-      "username": "Sal",
-     
-      "password": "password12345"
-    },
-    {
-      "username": "Lernantino",
-     
-      "password": "password12345"
-    },
-    {
-      "username": "coolPerson",
-     
-      "password": "password12345"
-    },
-    {
-      "username": "Blake",
-      
-      "password": "password12345"
-    },
-    {
-      "username": "Sammy",
-     
-      "password": "password12345"
-    }
-  ]
+  {
+    "name": "Sal",
+   
+    "password": "password12345"
+  },
+  {
+    "name": "Lernantino",
+   
+    "password": "password12345"
+  },
+  {
+    "name": "Amiko",
+   
+    "password": "password12345"
+  }
+]

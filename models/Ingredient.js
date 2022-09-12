@@ -1,9 +1,9 @@
-const { UUIDV4, Model, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Ingredients extends Model {}
+class Ingredient extends Model {}
 
-Ingredients.init(
+Ingredient.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -13,11 +13,19 @@ Ingredients.init(
     },
     name: {
       type: DataTypes.STRING,
-      
+      allowNull: false,
+    },
+    // description: {
+    //   type: DataTypes.STRING,
+    // },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     is_purchased: {
-      type: DataTypes. BOOLEAN,
-      
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -32,8 +40,8 @@ Ingredients.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'ingredients',
+    modelName: 'ingredient',
   }
 );
 
-module.exports = Ingredients;
+module.exports = Ingredient;

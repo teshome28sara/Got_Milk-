@@ -1,12 +1,10 @@
 const router = require('express').Router();
-const { Ingredients } = require('../../models');
+const { Ingredient } = require('../../models');
 const withAuth = require('../../utils/auth');
-
-
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newIngredient = await Ingredients.create({
+    const newIngredient = await Ingredient.create({
       ...req.body,
       user_id: req.session.user_id,
     });
@@ -19,19 +17,19 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const ingredientsData = await Ingredients.destroy({
+    const ingredientData = await Ingredient.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!ingredientsData) {
+    if (!ingredientData) {
       res.status(404).json({ message: 'No ingredient found with this id!' });
       return;
     }
 
-    res.status(200).json(ingredientsData);
+    res.status(200).json(ingredientData);
   } catch (err) {
     res.status(500).json(err);
   }

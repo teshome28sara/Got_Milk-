@@ -1,38 +1,13 @@
 const User = require('./User');
+const Ingredient = require('./Ingredient');
 
-const Ingredients = require('./Ingredients');
-
-
-
-// user can have many ingredients
-
-User.hasMany(Ingredients, {
+User.hasMany(Ingredient, {
   foreignKey: 'user_id',
-  onDelete: 'SET NULL',
+  onDelete: 'CASCADE'
 });
 
-Ingredients.belongsTo(User, {
-  foreignKey: 'user_id',
+Ingredient.belongsTo(User, {
+  foreignKey: 'user_id'
 });
 
-
-
-//  ingredients has one groceries list
-// Ingredients.hasOne(Groceries_list, {
-//   foreignKey: 'ingredients_id',
-//   onDelete: 'SET NULL',
-// });
-// Groceries_list.belongsTo(Ingredients, {
-//   foreignKey: 'ingredients_id',
-// });
-
-// user has one groceries list created
-// User.hasOne(Groceries_list, {
-//   foreignKey: 'user_id',
-//   onDelete: 'SET NULL',
-// });
-// Groceries_list.belongsTo(User ,{
-//   foreignKey: "user_id"
-// })
-
-module.exports = { User, Ingredients };
+module.exports = { User, Ingredient };
