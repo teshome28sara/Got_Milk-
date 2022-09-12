@@ -4,17 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registry</title>
+  <title>Got Milk?</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
   <header>
+    <h1>
+      Got Milk?
+    </h1>
     <!-- Only display the logout button if the user is logged in -->
     {{#if logged_in}}
     <nav>
       <button class="btn" id="logout">logout</button>
     </nav>
+     {{else}}
+        <a href="/login">Login</a>
+
+        <a href="/signup"> Sign Up</a>
     {{/if}}
   </header>
   <main class="container">
