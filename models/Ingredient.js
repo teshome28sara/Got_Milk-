@@ -1,9 +1,9 @@
 const { UUIDV4, Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Ingredients extends Model {}
+class Ingredient extends Model {}
 
-Ingredients.init(
+Ingredient.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -28,8 +28,8 @@ Ingredients.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'ingredients',
+    modelName: 'ingredient',
   }
 );
 
-module.exports = Ingredients;
+module.exports = Ingredient;
