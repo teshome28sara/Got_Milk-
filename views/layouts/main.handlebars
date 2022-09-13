@@ -5,33 +5,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Got Milk?</title>
+
+  <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
-  <header>
-    <h1>
-      Got Milk?
-    </h1>
-    <!-- Only display the logout button if the user is logged in -->
-    {{#if logged_in}}
-    <nav>
-      <button class="btn" id="logout">logout</button>
-    </nav>
-     {{else}}
-        <a href="/login">Login</a>
+<body class="mainpage">
+  <div class="flex-column justify-space-around">
+    <header class="display-flex justify-space-between align-center p-2">
+      <h1 class="pageTitle">
+        <span role="img" aria-label="money">🛒</span>
+        <a href="/">Got Milk Ingredient App!</a>
+      </h1>
+      <nav>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/dashboard">dashboard</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+         <a href="/signup">signup</a>
+        {{/if}}
+      </nav>
+    </header>
+    <main class="container container-fluid mt-5">
+      <!-- Render the sub layout -->
+      {{{ body }}}
+    </main>
+    <footer>
 
-        <a href="/signup"> Sign Up</a>
-    {{/if}}
-  </header>
-  <main class="container">
-    {{{ body }}}
-  </main>
-  <footer>
       
-  </footer>
+    </footer>
+  </div>
 
-  <!-- Only include the logout script if the user is logged in -->
+  <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}

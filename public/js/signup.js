@@ -1,6 +1,7 @@
 const signupFormHandler = async (event) => {
     event.preventDefault();
   
+
     const username = document.querySelector('#username-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
   
@@ -12,7 +13,9 @@ const signupFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+
+        document.location.replace('/dashboard');
+        
       } else {
         alert('Failed to sign up');
       }

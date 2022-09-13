@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { Ingredients, User } = require('../models');
+const { Ingredient, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all ingredients and JOIN with user data
-    const ingredientsData = await Ingredients.findAll({
+    // Get all ingredients JOIN with user data
+    const ingredientData = await Ingredient.findAll({
       include: [
         {
           model: User,
@@ -15,11 +15,11 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const ingredient = ingredientsData.map((ingredients) => ingredients.get({ plain: true }));
+    const ingredients = ingredientData.map((ingredient) => ingredient.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      ingredient, 
+      ingredients, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -27,9 +27,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/ingredients/:id', async (req, res) => {
+router.get('/ingredient/:id', async (req, res) => {
   try {
-    const ingredientsData = await Ingredients.findByPk(req.params.id, {
+    const ingredientData = await Ingredient.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -38,10 +38,10 @@ router.get('/ingredients/:id', async (req, res) => {
       ],
     });
 
-    const ingredients = ingredientsData.get({ plain: true });
+    const ingredient = ingredientData.get({ plain: true });
 
-    res.render('ingredients', {
-      ...ingredients,
+    res.render('ingredient', {
+      ...ingredient,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -55,7 +55,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Ingredients }],
+      include: [{ model: Ingredient }],
     });
 
     const user = userData.get({ plain: true });

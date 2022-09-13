@@ -1,17 +1,17 @@
 const User = require('./User');
 
-const Ingredients = require('./Ingredients');
+const Ingredient = require('./Ingredient');
 
 
 
 // user can have many ingredients
 
-User.hasMany(Ingredients, {
+User.hasMany(Ingredient, {
   foreignKey: 'user_id',
   onDelete: 'SET NULL',
 });
 
-Ingredients.belongsTo(User, {
+Ingredient.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
@@ -35,4 +35,4 @@ Ingredients.belongsTo(User, {
 //   foreignKey: "user_id"
 // })
 
-module.exports = { User, Ingredients };
+module.exports = { User, Ingredient };

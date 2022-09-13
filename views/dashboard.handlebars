@@ -1,0 +1,28 @@
+<div class='menu-container'>
+  <div class='card-header col-md-10'>
+    <h2>
+      Got Milk?
+    </h2>
+  </div>
+  <div class='add-item-container'>
+    <h2>
+      Add your grocery item here!
+    </h2>
+    <form class='new-item-form'>
+      <textarea id='name' name='name' rows='2' cols='30'>
+        {{name}}
+      </textarea>    
+      <br />
+      <button type='add_item' value='add_item'>
+        Add Item
+      </button>
+    </form>
+  </div>
+  {{#each ingredients as |ingredient|}}
+    <div class='ingredient col-md-5'>
+        <p>
+            {{ingredient.ingredient_name}}
+        </p>
+    </div>
+  {{/each}}
+</div>
