@@ -1,7 +1,6 @@
 <div class="card">
   <div class="card-body">
-    <h3 class="card-header">Sign Up</h3>
-    <form id="signup-form">
+    <form id="signup-form flex flex-col ...">
       <div class="form-group">
         <label for="username-signup">username:</label>
         <input
@@ -21,12 +20,13 @@
           id="password-signup"
         />
       </div>
-      <button type="submit" class="signupBtn">Sign Up!</button>
+      <div>
+        <button type="submit" class="signupBtn">Sign Up!</button>
+      </div>
+      <div>
+        <a href="/login" class="text-lime-600 hover:text-lime-700 focus:text-lime-600 text-underline">Already have an account? Login</a>
+      </div>
     </form>
-    <a
-      href="/login"
-      class="text-lime-600 hover:text-lime-700 focus:text-lime-600 text-underline"
-    >Already have an account? Login</a>
   </div>
 </div>
 
