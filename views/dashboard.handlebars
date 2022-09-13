@@ -1,28 +1,55 @@
 <div class='menu-container'>
   <div class='card-header col-md-10'>
     <h2>
-      Got Milk?
+     Welcom to  Got Milk?  {{username}}!
     </h2>
   </div>
   <div class='add-item-container'>
     <h2>
       Add your grocery item here!
     </h2>
-    <form class='new-item-form'>
-      <textarea id='name' name='name' rows='2' cols='30'>
-        {{name}}
-      </textarea>    
-      <br />
-      <button type='add_item' value='add_item'>
+    <form class="form new-ingredient-form">
+      <div>
+      <textarea  id="ingredient-name" name='ingredient-name' rows='2' cols='30'>
+        {{!-- {{name}} --}}
+      </textarea> 
+      </div>   
+        <div>
+      <textarea  id="is_purchased" name='is-purchased' rows='2' cols='30'>
+        {{!-- {{name}} --}}
+      </textarea> 
+      </div>   
+      
+      <button type="submit" class="btn btn-primary">
         Add Item
       </button>
     </form>
   </div>
-  {{#each ingredients as |ingredient|}}
+  {{#if ingredient.length}}
+  <div class="col-md-6 ingredient-list">
+    <h3>Current Ingredients:</h3>
+
+    {{#each ingredients as |ingredient|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/ingredient/{{ingredient.id}}">{{ingredient.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{ingredient.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/dashboard.js"></script>
+
+  {{!-- {{#each ingredients as |ingredient|}}
     <div class='ingredient col-md-5'>
         <p>
             {{ingredient.ingredient_name}}
         </p>
     </div>
   {{/each}}
-</div>
+</div> --}}
