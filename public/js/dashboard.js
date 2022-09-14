@@ -8,14 +8,14 @@ const newFormHandler = async (event) => {
     if (name && ingredient_cost && is_purchased) {
       const response = await fetch(`/api/ingredients`, {
         method: 'POST',
-        body: JSON.stringify({ name, ingredient_cost, is_purchased }),
+        body: JSON.stringify({  name, ingredient_cost, is_purchased }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
   
       if (response.ok) {
-        document.location.replace('/ingredient');
+        document.location.replace('/dashboard');
       } else {
         alert('Failed to add ingredient');
       }
