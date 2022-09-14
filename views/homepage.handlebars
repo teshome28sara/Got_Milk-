@@ -1,4 +1,4 @@
-<!-- Loop over each object in the projects array -->
+<!-- Loop over each object in the ingredients array -->
 {{#each ingredients as |ingredient| }}
 <div class="row mb-4 project">
   <div class="col-md-5">
@@ -9,16 +9,17 @@
     </h2>
     <p>
       <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
+     
       <span class="dollar-amount">{{format_amount ingredient.ingredient_cost}}</span>
-       spent
+       spent <br/>
+       <span>is purchased:{{ingredient.is_purchased}}</span>
     </p>
     <p>Created by {{ingredient.user.username}} on {{format_date ingredient.date_created}}</p>
   </div>
-  <div class="col-md-7">
-    <p>
-      {{is.purchasedn}}
+  {{!-- <div class="col-md-7">
+    <p>Is ingredient purchased
+      {{ingredient.user.is.purchasedn}}
     </p>
-  </div>
+  </div> --}}
 </div>
 {{/each}}
