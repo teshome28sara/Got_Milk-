@@ -1,4 +1,4 @@
-const { UUIDV4, Model, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Ingredient extends Model {}
@@ -13,6 +13,21 @@ Ingredient.init(
     },
     name: {
       type: DataTypes.STRING,
+      allowNull: false,
+    },
+    is_purchased: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    ingredient_cost: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
       
     },
     user_id: {
