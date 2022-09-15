@@ -19,17 +19,21 @@ Ingredient.init(
       type: DataTypes.BOOLEAN,
       allowNull: false
     },
+    quantity: {
+      type: DataTypes.STRING(40),
+      allowNull: false
+    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    ingredient_cost: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0
+    // ingredient_cost: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   defaultValue: 0
       
-    },
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
