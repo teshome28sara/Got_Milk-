@@ -5,3 +5,17 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+/**
+ * Form Validation Errors
+ */
+ .error {
+	border-color: red;
+  background-color: blue;
+}
+
+.error-message {
+	color: red;
+	font-style: italic;
+	margin-bottom: 1em;
+}
