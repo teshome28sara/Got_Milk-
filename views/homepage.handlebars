@@ -12,7 +12,11 @@
      
       <span class="dollar-amount">{{format_amount ingredient.ingredient_cost}}</span>
        spent <br/>
-       <span>is purchased:{{ingredient.is_purchased}}</span>
+
+     
+       <span>is purchased:{{ingredient.is_purchased}}</span><br />
+        <span>ingredient quantity:{{ingredient.ingredient_quantity}}</span>
+
     </p>
     <p>Created by {{ingredient.user.username}} on {{format_date ingredient.date_created}}</p>
   </div>

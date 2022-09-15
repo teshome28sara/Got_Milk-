@@ -2,41 +2,51 @@
     {
         "name": "Sweet Potato",
         "is_purchased": true,
-        "ingredient_price": 2
+        "ingredient_cost": 2,
+        "ingredient_quantity": 2
+       
     },
     {
         "name": "Olive Oil",
         "is_purchased": false,
-        "ingredient_price": 0
+        "ingredient_cost": 0,
+        "ingredient_quantity": 2
     },
     {
         "name": "Garlic Powder",
         "is_purchased": false,
-        "ingredient_cost": 0
+        "ingredient_cost": 0,
+        "ingredient_quantity": 2
+       
     },
     {
         "name": "Salt",
         "is_purchased": false,
-        "ingredient_cost":0
+        "ingredient_cost":0,
+        "ingredient_quantity": 2
     },
     {
         "name": "Balsamic Vinegar",
         "is_purchased": true,
-        "ingredient_cost": 5
+        "ingredient_cost": 5,
+        "ingredient_quantity": 2
     },
     {
         "name": "Honey",
         "is_purchased": true,
-        "ingredient_cost":5
+        "ingredient_cost":5,
+        "ingredient_quantity": 2
     },
     {
         "name": "Dijon Mustard",
         "is_purchased": false,
-        "ingredient_cost":0
+        "ingredient_cost":0,
+        "ingredient_quantity": 2
     },
     {
         "name": "Boneless Skinless Chicken Thighs",
         "is_purchased": false,
-        "ingredient_cost":0    }
+        "ingredient_cost":0,
+        "ingredient_quantity": 2    }
 ]
   

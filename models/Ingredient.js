@@ -17,18 +17,26 @@ Ingredient.init(
     },
     is_purchased: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      allowNull: false,
+      defaultValue: true
     },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
+     
+
+      defaultValue:DataTypes.NOW
     },
     ingredient_cost: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.FLOAT,
       allowNull: false,
       defaultValue: 0
       
+    },
+    ingredient_quantity: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
     },
     user_id: {
       type: DataTypes.INTEGER,
