@@ -42,7 +42,7 @@ const newFormHandler = async (event) => {
     .querySelector('.new-ingredient-form')
     .addEventListener('submit', newFormHandler);
   
-  // document
-  //   .querySelector('.ingredient-list')
-  //   .addEventListener('click', delButtonHandler);
+  document
+    .querySelector('.ingredient-list')
+    .addEventListener('click', delButtonHandler);
   
