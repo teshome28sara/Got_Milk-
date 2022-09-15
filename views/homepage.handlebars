@@ -1,25 +1,43 @@
-<!-- Loop over each object in the ingredients array -->
+<div class="container mx-auto p-5">
+  <div class="flex flex-row place-content-center">
+    <div class="basis-1/2 mx-5">
+        <img src="assets/GroceryPhoto.jpg" />
+          <h1 class="text-xl">Welcome!</h1>
+          <p>Never forget a grocery item again!</p>
+          
+            <button class="bg-gray-900 hover:bg-gray-600 text-white py-2 px-4 rounded" type="submit">Login</button>
+          </div>
+          <div>
+          <a href="/signup" class="bg-white hover:hover:text-gray-600 focus:text-gray-600">Don't have an account yet? Signup</a>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+
+{{!-- <!-- Loop over each object in the ingredients array -->
 {{#each ingredients as |ingredient| }}
 <div class="row mb-4 project">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
+      {{!-- {{{get_emoji}}}
       <a href="/ingredient/{{ingredient.id}}">{{ingredient.name}}</a>
     </h2>
     <p>
       <span for="img" aria-label="money">💲</span>
      
       <span class="dollar-amount">{{format_amount ingredient.ingredient_cost}}</span>
-       spent <br/>
-       <span>is purchased:{{ingredient.is_purchased}}</span>
-    </p>
+       spent <br/> --}}
+       {{!-- <span>is purchased:{{ingredient.is_purchased}}</span> --}}
+    {{!-- </p>
     <p>Created by {{ingredient.user.username}} on {{format_date ingredient.date_created}}</p>
-  </div>
+  </div> --}}
   {{!-- <div class="col-md-7">
     <p>Is ingredient purchased
-      {{ingredient.user.is.purchasedn}}
+      {{ingredient.user.is.purchased}}
     </p>
   </div> --}}
-</div>
-{{/each}}
+{{!-- </div>
+{{/each}} --}} 
