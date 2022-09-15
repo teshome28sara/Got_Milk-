@@ -8,7 +8,8 @@
   <div class="col-md-6">
     <h3>Create your grocery list:</h3>
 
-    <form class="form new-project-form">
+
+
       <div class="form-group">
         <label for="ingredient-name">Item:</label>
         <input class="form-input" type="text" id="ingredient-name" name="ingredient-name" />
@@ -17,17 +18,28 @@
         <label for="ingredient-quantity">Item Qty:</label>
         <input class="form-input" type="number" id="ingredient-quantity" name="ingredient-quantity" />
       </div>
-      {{!-- <div class="form-group">
-        <label for="is-purchased">In Cart:</label>
-        <textarea class="form-input" id="is-purchased" name="is-purchased"></textarea>
-      </div> --}}
+      
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="submit " class="btn btn-primary bg-gray-900 hover:bg-gray-600 text-white py-2 px-4 rounded">Add</button>
       </div>
     </form>
-  </div>
+  </div> 
 
-  {{#if ingredients.length}}
+
+  <div>
+    <div class="col-span-2">
+        <div class="grid grid-cols-2 gap-1">
+        {{#each user.ingredient}}
+        <div class="bg-stone-200 px-3 py-2">{{ingredient.name}}</div>
+        <!-- ... -->
+        <div class="bg-stone-200 px-3 py-2">{{ingredient.quantity}}</div>
+        {{/each}}
+        </div>
+        <div class="col-md-4">
+        <button class="btn btn-sm btn-danger bg-gray-900 hover:bg-gray-600 text-white py-2 px-4 rounded" data-id="{{ingredient.id}}">DELETE</button>
+      </div>
+    </div> 
+  {{!-- {{#if ingredients.length}}
   <div class="col-md-6 ingredient-list">
     <h3>Current Ingredients:</h3>
 
@@ -43,6 +55,6 @@
     {{/each}}
   </div>
   {{/if}}
-</div>
+</div> --}}
 
 <script src="./js/dashboard.js"></script>

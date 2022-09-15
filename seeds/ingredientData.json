@@ -1,42 +1,34 @@
 [
     {
         "name": "Sweet Potato",
-        "is_purchased": true,
         "quantity": 2
     },
     {
         "name": "Olive Oil",
-        "is_purchased": false,
         "quantity": 0
     },
     {
         "name": "Garlic Powder",
-        "is_purchased": false,
         "quantity": 0
     },
     {
         "name": "Salt",
-        "is_purchased": false,
         "quantity":0
     },
     {
         "name": "Balsamic Vinegar",
-        "is_purchased": true,
         "quantity": 5
     },
     {
         "name": "Honey",
-        "is_purchased": true,
         "quantity":5
     },
     {
         "name": "Dijon Mustard",
-        "is_purchased": false,
         "quantity":0
     },
     {
         "name": "Boneless Skinless Chicken Thighs",
-        "is_purchased": false,
         "quantity":0    }
 ]
   

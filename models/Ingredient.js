@@ -15,13 +15,13 @@ Ingredient.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    is_purchased: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false
-    },
+    // is_purchased: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false
+    // },
     quantity: {
       type: DataTypes.STRING(40),
-      allowNull: false
+      // allowNull: false
     },
     date_created: {
       type: DataTypes.DATE,
