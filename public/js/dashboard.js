@@ -2,13 +2,13 @@ const newFormHandler = async (event) => {
     event.preventDefault();
   
     const name = document.querySelector('#ingredient-name').value.trim();
-    const ingredient_cost = document.querySelector('#ingredient-cost').value.trim();
-    const is_purchased = document.querySelector('#is-purchased').value.trim();
+    const quantity = document.querySelector('#ingredient-quantity').value.trim();
+    // const is_purchased = document.querySelector('#is-purchased').value.trim();
   
-    if (name && ingredient_cost && is_purchased) {
+    if (name && quantity) {
       const response = await fetch(`/api/ingredients`, {
         method: 'POST',
-        body: JSON.stringify({ name, ingredient_cost, is_purchased }),
+        body: JSON.stringify({ name, quantity}),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -42,7 +42,7 @@ const newFormHandler = async (event) => {
     .querySelector('.new-ingredient-form')
     .addEventListener('submit', newFormHandler);
   
-  document
-    .querySelector('.ingredient-list')
-    .addEventListener('click', delButtonHandler);
+  // document
+  //   .querySelector('.ingredient-list')
+  //   .addEventListener('click', delButtonHandler);
   
