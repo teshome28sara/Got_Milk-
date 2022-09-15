@@ -44,15 +44,19 @@
       </div> --}}
     {{!-- </div>  --}}
   {{#if ingredients.length}}
-  <div class="col-md-6 ingredient-list">
+  <div class="ingredient-list">
     <h3>Current Ingredients:</h3>
-
+<div class="grid grid-cols-3">
     {{#each ingredients as |ingredient|}}
     <div class="row mb-2">
       <div class="col-md-8">
         <h4>
         <input type="checkbox">
         {{ingredient.name}}</h4>
+      </div>
+       <div class="col-md-8">
+        <h4>
+        {{ingredient.quantity}} ea</h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{ingredient.id}}">DELETE</button>
