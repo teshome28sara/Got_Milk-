@@ -12,7 +12,13 @@
 <form class="form new-ingredient-form">
       <div class="form-group">
         <label for="ingredient-name">Item:</label>
-        <input class="form-input" type="text" id="ingredient-name" name="ingredient-name" />
+        <input 
+        class="form-input" 
+        type="text" required 
+        data-bouncer-message="enter an item to add to your list"
+        id="ingredient-name" 
+        name="ingredient-name" />
+      
       </div>
       <div class="form-group">
         <label for="ingredient-quantity">Item Qty:</label>
@@ -68,3 +74,4 @@
 </div>
 
 <script src="./js/dashboard.js"></script>
+<script src="/js/bouncer.js"></script>
