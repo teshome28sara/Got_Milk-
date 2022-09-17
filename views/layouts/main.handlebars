@@ -1,62 +1,60 @@
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Got Milk?</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Got Milk?</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Rajdhani:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="stylesheet" href="css/style.css">
 
-    <link rel="stylesheet" href="css/style.css" />
-    
-    {{!-- bouncerjs validation form --}}
+  {{!-- bouncerjs validation form --}}
     <script
       src="https://cdn.jsdelivr.net/gh/cferdinandi/bouncer@1.0/dist/bouncer.polyfills.min.js"
     ></script>
 
+</head>
 
-  </head>
-
-  <body class="mainpage">
-    <div class="flex-column justify-space-around">
-      <header class="display-flex justify-space-between align-center p-2">
-        <h1 class="pageTitle">
-          <span role="img" aria-label="money">🛒</span>
-          <a href="/">Got Milk Ingredient App!</a>
-        </h1>
-        <nav>
+<body class="mainpage">
+  <div class="flex-column justify-space-around">
+    <header class="flex justify-between p-3">
+      <h1 class="pageTitle">
+        <span role="img" aria-label="money">🛒</span>
+        <a href="/" class="font-bold text-2xl">Got Milk?</a>
+      </h1>
+      <nav class="ml-auto flex">
+        <ul class="list-none flex space-x-4">
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
-            <a href="/dashboard">dashboard</a>
-            |
-            <button class="no-button" id="logout">logout</button>
+          <a href="/dashboard" class="block">Dashboard</a> |
+          <button class="no-button" id="logout">Logout</button>
           {{else}}
-            <a href="/login">login</a>
-            <a href="/signup">signup</a>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Signup</a></li>
           {{/if}}
-        </nav>
-      </header>
-      <main class="container container-fluid mt-5">
-        <!-- Render the sub layout -->
-        {{{body}}}
-      </main>
-      <footer>
+        </ul>
+      </nav>
+    </header>
+    <main class="container mx-auto my-8 px-5">
+      <!-- Render the sub layout -->
+      {{{ body }}}
+    </main>
+    <footer>
 
-      </footer>
-    </div>
+      
+    </footer>
+  </div>
 
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
-  </body>
-
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
 
 </html>
+
