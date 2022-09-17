@@ -8,7 +8,6 @@
   <div class="col-md-6">
     <h3>Add items to create your grocery list:</h3>
 
-
     <form class="form new-ingredient-form">
       <div class="form-group">
         <label for="ingredient-name">Item:</label>
@@ -45,24 +44,6 @@
                       id="ingredient-quantity" 
                       name="ingredient-quantity" />
       </div>
-
-      {{!-- <div class="form-group ">
-        <label for="ingredient-unit">Qty Unit:</label>
-        <input class="form-input block w-50 px-3 py-1.5
-                      text-base
-                      font-normal
-                      text-gray-700
-                      bg-white bg-clip-padding
-                      border border-solid border-black
-                      rounded-lg
-                      transition
-                      ease-in-out
-                      m-0
-                      focus:border-black" 
-                      type="text"
-                      id="ingredient-unit" 
-                      name="ingredient-unit" />
-      </div> --}}
       
       <div class="form-group">
         <button type="submit " class="btn btn-primary bg-gray-900 hover:bg-gray-600 text-white py-2 px-4 rounded">Add Item </button>
@@ -70,7 +51,6 @@
     </form>
   </div> 
 
-  {{!-- {{#if ingredients.length}} --}}
 <div class="ingredient-list py-2 px-4">
     <h3 class="text-3xl py-5">My Grocery List:</h3>
 <div class="ingredient-list">
@@ -96,10 +76,7 @@
         {{ingredient.quantity}} </h4>
       </div>
 
-       {{!-- <div class="px-3 py-2">
-        <h4>
-        {{"ingredient-unit"}} </h4>
-      </div> --}}
+     
       <div class="px-3 py-2 ingredient-list">
        
         <button class="btn btn-md btn-danger" data-id="{{ingredient.id}}">
@@ -113,7 +90,7 @@
     </div>
     {{/each}}
   </div>
-  {{!-- {{/if}} --}}
+
 </div>
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
