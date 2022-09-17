@@ -1,12 +1,59 @@
-# 15 Project 2: Got Milk Ingredient Tracking App
+#  GOT Milk? Ingredient Tracking App:
 
-Projects play a key role in your journey to becoming a full-stack web developer. As you enter the last phase of the boot camp, you’ll begin to apply for development jobs. If you want to land interviews, your portfolio must feature high-quality deployed examples of your work—-and you can use your finished projects for that very purpose.
+## Description 
+Got Milk?  is a full stack application that uses both  front end and back end technology. It allows users to add,  view, and  delete their ingredient details. It has a user  signup and login feature to  personalize the user experience. 
 
-As your first opportunity to show employers your collaborative skills and coding abilities, this particular project will be a focal point of your portfolio. Employers want to see what you can do, but they also want to see how you work with other developers. The more examples of deployed collaborative work you have in your portfolio, the more likely you are to get an interview and a job.
+
+ 
+ 
+  ## License:
+  ![License](https://img.shields.io/badge/License-GNU-green.svg)
+  ![Badge](https://img.shields.io/badge/License-GNU-blue.svg)
+  
+ 
+  ## Table of Contents
+ 
+  - [Installation](#installation)
+   - [Usage](#usage)
+   -[License](#license)
+   - [Contribute](#contribute)
+   - [Tests](#tests)
+  - [Questions](#questions) 
+  
+  
+  ## Installation 
+  This application  needs node npm packages  to run 
+ 
+  ## Usage 
+  clone repo open in vs code and run in terminal
+## License
+GNU
+
+## Contribution
+test it out 
+
+## Test
+by cloneing repo and  run in terminal with the command node index.js
+
+## Questions
+tes28sar@gmail.com
+
+
+  
+
+
+
+
+
+
+## Description 
+Got Milk?  is a full stack application that uses both  front end and back end technology. It allows users to add,  view, and  delete their ingredient details. It has a user  signup and login feature to  personalize the user experience. 
+
+
 
 ## Project Requirements
 
-You and your group will use everything you’ve learned over the past six modules to create a real-world full-stack application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
+
 
 * Use Node.js and Express.js to create a RESTful API.
 
