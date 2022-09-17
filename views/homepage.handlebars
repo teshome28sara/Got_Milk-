@@ -1,5 +1,5 @@
 <!-- Loop over each object in the ingredients array -->
-{{#each ingredients as |ingredient| }}
+{{!-- {{#each ingredients as |ingredient| }}
 <div class="row mb-4 ingredient">
   <div class="col-md-5">
     <h2>
@@ -15,7 +15,7 @@
 
      
        {{!-- <span>is purchased:{{ingredient.is_purchased}}</span><br /> --}}
-        <span>ingredient quantity:{{ingredient_quantity}}</span>
+        {{!-- <span>ingredient quantity:{{ingredient_quantity}}</span>
 
     </p>
     <p>Created by {{ingredient.user.username}} on {{format_date ingredient.date_created}}</p>
@@ -27,4 +27,25 @@
     </p>
   </div> --}}
 {{!-- </div> --}}
-{{/each}}
+{{!-- {{/each}}  --}} 
+
+<div class="container mx-auto p-5">
+  <div class="flex flex-row place-content-center">
+    <div class="basis-1/2 mx-5">
+        <img src="assets/GroceryPhoto.jpg" />
+          <h1 class="text-xl">Welcome!</h1>
+          <p>Never forget a grocery item again!</p>
+          
+            <button class="bg-gray-900 hover:bg-gray-600 text-white py-2 px-4 rounded" type="submit">
+        <a
+          href="/login"
+          class="hover:hover:text-gray-600 focus:text-gray-600 hover:text">Login
+        </a>
+        </button>
+          </div>
+          <div>
+          <a href="/signup" class="bg-white hover:hover:text-gray-600 focus:text-gray-600">Don't have an account yet? Signup</a>
+          </div>
+    </div>
+  </div>
+</div>
