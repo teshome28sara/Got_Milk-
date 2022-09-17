@@ -1,70 +1,120 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{username}}!</h2>
+    <h2 class="text-3xl font-bold">Welcome, {{username}}!</h2>
   </div>
 </div>
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Create your grocery list:</h3>
+    <h3>Add items to create your grocery list:</h3>
 
 
-<form class="form new-ingredient-form">
+    <form class="form new-ingredient-form">
       <div class="form-group">
         <label for="ingredient-name">Item:</label>
-        <input class="form-input" type="text" id="ingredient-name" name="ingredient-name" />
+        <input class="form-input block w-50 px-3 py-1.5
+                      text-base
+                      font-normal
+                      text-gray-700
+                      bg-white bg-clip-padding
+                      border border-solid border-black
+                      rounded-lg
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:border-black" 
+                      type="text" 
+                      id="ingredient-name" 
+                      name="ingredient-name" />
       </div>
-      <div class="form-group">
+      <div class="form-group ">
         <label for="ingredient-quantity">Item Qty:</label>
-        <input class="form-input" type="number" id="ingredient-quantity" name="ingredient-quantity" />
+        <input class="form-input block w-50 px-3 py-1.5
+                      text-base
+                      font-normal
+                      text-gray-700
+                      bg-white bg-clip-padding
+                      border border-solid border-black
+                      rounded-lg
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:border-black" 
+                      type="text"
+                      id="ingredient-quantity" 
+                      name="ingredient-quantity" />
       </div>
+
+      {{!-- <div class="form-group ">
+        <label for="ingredient-unit">Qty Unit:</label>
+        <input class="form-input block w-50 px-3 py-1.5
+                      text-base
+                      font-normal
+                      text-gray-700
+                      bg-white bg-clip-padding
+                      border border-solid border-black
+                      rounded-lg
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:border-black" 
+                      type="text"
+                      id="ingredient-unit" 
+                      name="ingredient-unit" />
+      </div> --}}
       
       <div class="form-group">
-        <button type="submit " class="btn btn-primary bg-gray-900 hover:bg-gray-600 text-white py-2 px-4 rounded">Add</button>
+        <button type="submit " class="btn btn-primary bg-gray-900 hover:bg-gray-600 text-white py-2 px-4 rounded">Add Item </button>
       </div>
     </form>
   </div> 
 
-
-  {{!-- <div>
-    <div class="col-span-2">
-        <div class="grid grid-cols-2 gap-1">
-        {{#each user.ingredient}}
-        <div class="bg-stone-200 px-3 py-2">
-          <input type="checkbox">
-          {{ingredient.name}}
-          </div>
-        
-
-        <div class="bg-stone-200 px-3 py-2">{{ingredient.quantity}}</div>
-        {{/each}}
-        </div>
-        <div class="col-md-4">
-        <button class="btn btn-sm btn-danger bg-gray-900 hover:bg-gray-600 text-white py-2 px-4 rounded" data-id="{{ingredient.id}}">DELETE</button>
-      </div> --}}
-    {{!-- </div>  --}}
-  {{#if ingredients.length}}
-  <div class="ingredient-list">
-    <h3>Current Ingredients:</h3>
-<div class="grid grid-cols-3">
+  {{!-- {{#if ingredients.length}} --}}
+<div class="ingredient-list py-2 px-4">
+    <h3 class="text-3xl py-5">Your Grocery List:</h3>
+<div class="ingredient-list">
+   <header class="px-3 py-2 h-10 bg-green-100 border-x border-y border-black-500 grid grid-cols-4 gap-1">
+    <h4>got?</h4>
+    <h4>item</h4>
+    <h4>qty</h4>
+    <h4>delete</h4>
+    </header>
     {{#each ingredients as |ingredient|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
+    <div class="grid grid-cols-4 gap-1 border-x border-y border-black-500 ">
+      
+      <div class="px-3 py-2">
+        <input type="checkbox" class="checkbox">
+      </div>
+      
+      <div class="px-3 py-2">
         <h4>
-        <input type="checkbox">
         {{ingredient.name}}</h4>
       </div>
-       <div class="col-md-8">
+       <div class="px-3 py-2">
         <h4>
-        {{ingredient.quantity}} ea</h4>
+        {{ingredient.quantity}} </h4>
       </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{ingredient.id}}">DELETE</button>
+
+       {{!-- <div class="px-3 py-2">
+        <h4>
+        {{"ingredient-unit"}} </h4>
+      </div> --}}
+      <div class="px-3 py-2 ingredient-list">
+       
+        <button class="btn btn-md btn-danger" data-id="{{ingredient.id}}">
+          <span class="button-icon pointer-events-none ">
+            <ion-icon class="w-8 h-8" name="trash-outline"></ion-icon>
+          </span>
+        </button>
+        
       </div>
+
     </div>
     {{/each}}
   </div>
-  {{/if}}
+  {{!-- {{/if}} --}}
 </div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
 <script src="./js/dashboard.js"></script>
