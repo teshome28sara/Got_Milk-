@@ -15,11 +15,11 @@ Ingredient.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    is_purchased: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true
-    },
+    // is_purchased: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false,
+    //   defaultValue: true
+    // },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
@@ -48,7 +48,7 @@ Ingredient.init(
   },
   {
     sequelize,
-    timestamps: false,
+    // timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'ingredient',

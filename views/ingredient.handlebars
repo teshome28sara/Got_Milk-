@@ -1,31 +1,12 @@
- {{#if ingredients.length}}
-  <div class="col-md-6 ingredient-list">
-    <h3>Current Ingredients:</h3>  
-
-    {{#each ingredients as |ingredient|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/dashboard/{{ingredient.id}}">{{ingredient.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{ingredient.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
 
 
-
-
-<div class="text-center">
+ <div class="ingredientTitle">
   <h2>{{name}}</h2>
    <p>Quantity: {{ingredient-quantity}}</p>
   <p>{{{get_emoji}}}</p>
   <p>{{ingredient-cost}}</p>
   
-  <p>{{is-purchased}}</p>
+  {{!-- <p>{{is-purchased}}</p> --}}
   <p>Created by {{user.username}} on {{format_date date_created}}</p>
   <p>
     <span for="img" aria-label="money">💲</span>
@@ -38,3 +19,7 @@
 </div> 
 
  
+
+
+
+<

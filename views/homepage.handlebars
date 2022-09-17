@@ -1,6 +1,6 @@
 <!-- Loop over each object in the ingredients array -->
 {{#each ingredients as |ingredient| }}
-<div class="row mb-4 project">
+<div class="row mb-4 ingredient">
   <div class="col-md-5">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
@@ -11,19 +11,20 @@
       <span for="img" aria-label="money">💲</span>
      
       <span class="dollar-amount">{{format_amount ingredient.ingredient_cost}}</span>
-       spent <br/>
+       cost  <br/>
 
      
-       <span>is purchased:{{ingredient.is_purchased}}</span><br />
+       {{!-- <span>is purchased:{{ingredient.is_purchased}}</span><br /> --}}
         <span>ingredient quantity:{{ingredient.ingredient_quantity}}</span>
 
     </p>
     <p>Created by {{ingredient.user.username}} on {{format_date ingredient.date_created}}</p>
   </div>
+   </div>
   {{!-- <div class="col-md-7">
     <p>Is ingredient purchased
       {{ingredient.user.is.purchasedn}}
     </p>
   </div> --}}
-</div>
+{{!-- </div> --}}
 {{/each}}

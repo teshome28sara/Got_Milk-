@@ -4,12 +4,12 @@ const newFormHandler = async (event) => {
     const name = document.querySelector('#ingredient-name').value.trim();
     const ingredient_cost = document.querySelector('#ingredient-cost').value.trim();
     const ingredient_quantity = document.querySelector('#ingredient-quantity').value.trim();
-    const is_purchased = document.querySelector('#is-purchased').value.trim();
+    // const is_purchased = document.querySelector('#is-purchased').value.trim();
   
-    if (name && ingredient_cost && ingredient_quantity && is_purchased) {
+    if (name && ingredient_cost && ingredient_quantity ) {
       const response = await fetch(`/api/ingredients`, {
         method: 'POST',
-        body: JSON.stringify({  name, ingredient_cost, ingredient_quantity, is_purchased }),
+        body: JSON.stringify({  name, ingredient_cost, ingredient_quantity }),
         headers: {
           'Content-Type': 'application/json',
         },
