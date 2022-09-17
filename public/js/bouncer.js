@@ -54,7 +54,7 @@ var validate = new Bouncer('form', {
 	},
 
 	// Form Submission
-	disableSubmit: false, // If true, native form submission is suppressed even when form validates
+	disableSubmit: true, // If true, native form submission is suppressed even when form validates
 
 	// Custom Events
 	emitEvents: true // If true, emits custom events
@@ -70,11 +70,11 @@ document.addEventListener('bouncerShowError', function (event) {
 }, false);
 
 // Detect a successful form validation
-document.addEventListener('bouncerFormValid', function (event) {
+// document.addEventListener('bouncerFormValid', function (event) {
 
-	// The successfully validated form
-	var form = event.target;
+// 	// The successfully validated form
+// 	var form = event.target;
 
-	// If `disableSubmit` is true, you might use this to submit the form with Ajax
+// 	// If `disableSubmit` is true, you might use this to submit the form with Ajax
 
-}, false);
+// }, false);
