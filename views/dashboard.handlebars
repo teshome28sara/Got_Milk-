@@ -11,7 +11,7 @@
     <form class="form new-ingredient-form">
       <div class="form-group">
         <label for="ingredient-name">ingredient name:</label>
-        <input class="form-input" type="text" id="ingredien--name" name="ingredient-name" />
+        <input class="form-input" type="text" id="ingredient-name" name="ingredient-name" />
       </div>
       <div class="form-group">
         <label for="ingredient-cost">ingredient cost ($):</label>
@@ -35,14 +35,14 @@
 
 
 {{#if ingredients.length}}
-  <div class="col-md-6 ingredient-list">
+  <div class="ingredient-list">
     <h3>Current Ingredient:</h3>
 
      {{#each ingredients as |ingredient|}}
     <div class="row mb-2">
       <div class="col-md-8">
         <h4><a href="/ingredient/{{ingredient.id}}">{{ingredient.name}}</a></h4>
-      </div>
+      {{!-- </div> --}}
 
    
    

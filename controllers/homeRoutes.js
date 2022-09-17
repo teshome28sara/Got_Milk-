@@ -53,17 +53,20 @@ router.get('/ingredient/:id', async (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Ingredient }],
+    const data = await Ingredient.findAll({
+      where: {
+        user_id: req.session.user_id
+      },
     });
 
-    const user = userData.get({ plain: true });
-    console.log(user)
+    // Serialize data so the template can read it
+    const ingredients = data.map((project) => project.get({ plain: true }));
+    // Find the logged in user based on the session ID
+    
+    console.log(ingredients)
 
     res.render('dashboard', {
-      ...user,
+      ingredients,
       logged_in: true
     });
   } catch (err) {
