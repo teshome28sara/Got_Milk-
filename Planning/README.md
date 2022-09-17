@@ -44,10 +44,13 @@ University of Washington coding bootcamp project calaberators:
 
 
 ## Test
- for code review [my repo](https://github.com/teshome28sara/Employee-tracker-12-mysql)
+ for code review [project repo](https://github.com/teshome28sara/Employee-tracker-12-mysql)
+ for deployed site [project App] (repo]( https://got-milk-grocery.herokuapp.com/)
 
 
 ## Questions
+Mcvilloso@gmail.com
+jmotto31@gmail.com
 tes28sar@gmail.com
 
 
