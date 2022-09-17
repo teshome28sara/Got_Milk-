@@ -18,3 +18,21 @@ body {
 	font-style: italic;
 	margin-bottom: 1em;
 }
+
+.welcome {
+	font-size: xx-large;
+}
+
+@media only screen and (max-width: 576px) {
+	.welcome {
+		font-size: medium;
+	}
+	
+	.login {
+		font-size: small;
+	}
+
+	.signup {
+		font-size: small;
+	}
+}
