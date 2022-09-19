@@ -1,15 +1,16 @@
-<div class="grid grid-cols-2 gap-1 items-center">  
+<div class="grid grid-cols-2 gap-1 items-center">
   <div><img src="assets/GroceryPhoto.jpg" class="img" /></div>
   <div>
     <h1 class="text-3xl font-bold py-2">Got Milk?</h1>
     <p class="py-2">An app that will help you never forget a grocery item again!</p>
-    <button class="bg-gray-900 hover:bg-gray-600 text-white py-2 px-4 rounded" type="submit">
+    <button
+      class="bg-gray-900 hover:bg-gray-600 text-white py-2 px-4 rounded"
+      type="submit"
+    >
       <a href="/login">Get Started</a>
     </button>
   </div>
 </div>
-
-
 
 {{!-- <!-- Loop over each object in the ingredients array -->
 {{#each ingredients as |ingredient| }}
@@ -25,14 +26,14 @@
      
       <span class="dollar-amount">{{format_amount ingredient.ingredient_cost}}</span>
        spent <br/> --}}
-       {{!-- <span>is purchased:{{ingredient.is_purchased}}</span> --}}
-    {{!-- </p>
+{{!-- <span>is purchased:{{ingredient.is_purchased}}</span> --}}
+{{!-- </p>
     <p>Created by {{ingredient.user.username}} on {{format_date ingredient.date_created}}</p>
   </div> --}}
-  {{!-- <div class="col-md-7">
+{{!-- <div class="col-md-7">
     <p>Is ingredient purchased
       {{ingredient.user.is.purchased}}
     </p>
   </div> --}}
 {{!-- </div>
-{{/each}} --}} 
+{{/each}} --}}

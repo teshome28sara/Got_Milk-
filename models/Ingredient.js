@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Ingredient extends Model {}
 
@@ -32,13 +32,13 @@ Ingredient.init(
     //   type: DataTypes.INTEGER,
     //   allowNull: false,
     //   defaultValue: 0
-      
+
     // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id',
+        model: "user",
+        key: "id",
       },
     },
   },
@@ -47,7 +47,7 @@ Ingredient.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'ingredient',
+    modelName: "ingredient",
   }
 );
 

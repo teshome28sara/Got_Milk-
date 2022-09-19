@@ -18,6 +18,5 @@ module.exports = {
     } else {
       return `<span for="img" aria-label="shopping bag ">🛍️</span>`;
     }
-  }
+  },
 };
-
