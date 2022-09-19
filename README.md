@@ -56,7 +56,7 @@ University of Washington coding bootcamp project contributors:
 
 There are no tests required for this application.
 </br> For code review go to the [Github project repo](https://github.com/teshome28sara/Got_Milk-)
-</br>For deployed site got to the [deployed project App](https://got-milk-grocery.herokuapp.com/)
+</br>For deployed site go to the [project App](https://got-milk-grocery.herokuapp.com/)
 
 ## Questions
 
