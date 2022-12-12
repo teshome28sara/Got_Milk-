@@ -32,7 +32,7 @@ This application uses `node.js` and `express.js` to create a RESTful API. It als
 
 ## Usage
 
-Application is deployed to [Heroku](https://got-milk-grocery.herokuapp.com/)
+Application is deployed to [Heroku](https://dry-brook-80924.herokuapp.com//)
 </br>
 ![Homepage](public/assets/Got-milk-homepage.png)
 
